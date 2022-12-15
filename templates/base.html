@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Civity</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" />
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+  </head>
+
+  <body>
+    <a href="{% url 'index' %}">
+      <h1>Civity</h1>
+    </a>
+
+    {% block content %} {% endblock %}
+  </body>
+</html>

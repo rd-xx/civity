@@ -1,3 +1,4 @@
 Django>4.1
 psycopg2>2.9
 pillow
+django-bootstrap-v5

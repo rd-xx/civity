@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<p>Liste de tous nos produits :</p>
+{% for product in products %}
+<h2>{{ product.name }}</h2>
+<p>{{ product.price }} €</p>
+<img src="{{ product.image.url }}" style="max-width: 250px" />
+<a href="{{ product.get_absolute_url }}">Voir le produit</a>
+<br />
+{% endfor %} {% endblock %}
