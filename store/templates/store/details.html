@@ -1,7 +1,12 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% if product.stock == 0 %}
+<h1>Produit indisponible</h1>
+{% endif %}
+
 <h2>{{ product.name }}</h2>
 <p>{{ product.description }}</p>
 <h3>{{ product.stock }}</h3>
 <h3>{{ product.price }}</h3>
 <img src="{{ product.image.url }}" style="max-width: 300px" />
-{% endblock content %}
+{% if user.is_authenticated %}
+<a href="{% url 'cart-add' product.slug %}">Ajouter au panier</a>
+{% endif %} {% endblock content %}

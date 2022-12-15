@@ -24,7 +24,11 @@
       {% if user.is_authenticated %}
       <p>Bonjour {{ user.username }}</p>
       <a href="{% url 'logout' %}">Se déconnecter</a>
-      {% else %}
+      {% if user.cart %}
+      <a href="{% url 'cart' %}"
+        >Voir le panier ({{ user.cart.orders.count }})</a
+      >
+      {% endif %} {% else %}
       <a href="{% url 'signup' %}">S'inscrire</a>
       <a href="{% url 'signin' %}">Se connecter</a>
       {% endif %}

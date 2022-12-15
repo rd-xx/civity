@@ -17,12 +17,15 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from accounts.views import logout_user, signup, signin
-from store.views import index, product_details
+from store.views import cart, cart_add, cart_delete, index, product_details
 from civity import settings
 
 urlpatterns = [
     path("", index, name="index"),
     path("product/<str:slug>/", product_details, name="product"),
+    path("cart/", cart, name="cart"),
+    path("cart/add/<str:slug>/", cart_add, name="cart-add"),
+    path("cart/delete/", cart_delete, name="cart-delete"),
     path("signup/", signup, name="signup"),
     path("signin/", signin, name="signin"),
     path("logout/", logout_user, name="logout"),
