@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% if products %}
 <p>Liste de tous nos produits :</p>
 {% for product in products %}
 <h2>{{ product.name }}</h2>
@@ -6,4 +6,6 @@
 <img src="{{ product.image.url }}" style="max-width: 250px" />
 <a href="{{ product.get_absolute_url }}">Voir le produit</a>
 <br />
-{% endfor %} {% endblock %}
+{% endfor %} {% else %}
+<h3>Aucun produit en stock.</h1>
+{% endif %} {% endblock %}

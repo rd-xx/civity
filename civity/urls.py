@@ -16,11 +16,15 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
+from accounts.views import logout_user, signup, signin
 from store.views import index, product_details
 from civity import settings
 
 urlpatterns = [
     path("", index, name="index"),
     path("product/<str:slug>/", product_details, name="product"),
+    path("signup/", signup, name="signup"),
+    path("signin/", signin, name="signin"),
+    path("logout/", logout_user, name="logout"),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

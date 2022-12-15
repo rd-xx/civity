@@ -20,6 +20,16 @@
       <h1>Civity</h1>
     </a>
 
+    <div>
+      {% if user.is_authenticated %}
+      <p>Bonjour {{ user.username }}</p>
+      <a href="{% url 'logout' %}">Se déconnecter</a>
+      {% else %}
+      <a href="{% url 'signup' %}">S'inscrire</a>
+      <a href="{% url 'signin' %}">Se connecter</a>
+      {% endif %}
+    </div>
+
     {% block content %} {% endblock %}
   </body>
 </html>
