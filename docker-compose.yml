@@ -13,7 +13,7 @@ services:
       - POSTGRES_PASSWORD=$DB_PASSWORD
 
   web:
-    container_name: civity_back
+    container_name: civity_web
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
