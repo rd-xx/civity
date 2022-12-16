@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: white;
+  color: black !important;
+}
+
+h1 {
+  display: flex;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 8rem;
+  font-weight: 50px;
+  margin-top: 2rem;
+  color: darkslategrey;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+a:visited {
+  color: grey;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: none;
+  border: purple solid;
+  transition: all 5s ease;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: vw;
+  height: vh;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  color: yellow;
+  gap: 25px;
+  font-size: 20px;
+  color: yellow;
+}
+
+.disconect {
+  color: red;
+}
+
+.nav > .disconect:first-child {
+  color: red;
+}

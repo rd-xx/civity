@@ -1,37 +1,34 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
     <title>Civity</title>
-    <style>
-      body {
-        margin: 0;
-      }
-
-      canvas {
-        width: 100%;
-        height: 100%;
-      }
-    </style>
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+    <link rel="stylesheet" href="{% static 'sign.css' %}" />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
   </head>
 
   <body>
-    <a href="{% url 'index' %}">
-      <h1>Civity</h1>
-    </a>
+    <div class="overview">
+      <a href="{% url 'index' %}">
+        <h1>Civity <i class="fa-solid fa-cart-shopping"></i></h1>
+      </a>
 
-    <div>
-      {% if user.is_authenticated %}
-      <p>Bonjour {{ user.username }}</p>
-      <a href="{% url 'logout' %}">Se déconnecter</a>
-      {% if user.cart %}
-      <a href="{% url 'cart' %}"
-        >Voir le panier ({{ user.cart.orders.count }})</a
-      >
-      {% endif %} {% else %}
-      <a href="{% url 'signup' %}">S'inscrire</a>
-      <a href="{% url 'signin' %}">Se connecter</a>
-      {% endif %}
+      <div class="nav">
+        {% if user.is_authenticated %}
+        <p>Bonjour {{ user.username }}</p>
+        <a class="disconect" href="{% url 'logout' %}">Se déconnecter</a>
+        {% if user.cart %}
+        <a href="{% url 'cart' %}"
+          >Voir le panier ({{ user.cart.orders.count }})</a
+        >
+        {% endif %} {% else %}
+        <a href="{% url 'signup' %}">S'inscrire</a>
+        <a href="{% url 'signin' %}">Se connecter</a>
+        {% endif %}
+      </div>
     </div>
 
     {% block content %} {% endblock %}

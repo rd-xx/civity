@@ -12,6 +12,7 @@ class Product(models.Model):
     stock = models.IntegerField(default=0)
     description = models.TextField(blank=True)
     image = models.ImageField(upload_to='products')
+    created = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"{self.name} - {self.stock}"
